@@ -62,3 +62,6 @@ There are two versions of this application:
 -   `package.json`: Lists the Node.js dependencies for the React application.
 -   `.streamlit/secrets.toml`: A configuration file for storing API keys for the Streamlit application (this file is ignored by git).
 -   `.gitignore`: Specifies the files and directories that should be ignored by git.
+
+## Generated Image Example
+<img width="1024" height="1024" alt="KakaoTalk_20251103_123119485" src="https://github.com/user-attachments/assets/ac3dc7fd-c8bf-4e3e-8ba8-29641d216c88" />
