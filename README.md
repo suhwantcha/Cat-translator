@@ -5,7 +5,9 @@ This application analyzes the audio of a cat's meow to understand its meaning an
 ## Overview
 
 Here's how it works:
-<img width="400" height="250" alt="KakaoTalk_20251103_123119485" src="https://github.com/user-attachments/assets/48880bb3-8003-4536-a6e9-1470ca884cec" />
+
+<img width="400" height="250" alt="KakaoTalk_20251103_123734964" src="https://github.com/user-attachments/assets/590f9248-9c9c-4c82-b65c-88709e759303" />
+
 1.  **Audio Upload:** You start by uploading an audio file of a cat's meow (formats like WAV, MP3, etc., are supported).
 2.  **AI Translation:** The application sends the audio file to the Gemini API, which analyzes the meow's characteristics. Based on this analysis, it translates the meow into a short, funny, human-like phrase.
 3.  **Meme Generation:** The translated phrase is then used as a prompt for a separate AI model (Stable Diffusion via Hugging Face). This model generates a unique meme image that visually represents the translated text.
