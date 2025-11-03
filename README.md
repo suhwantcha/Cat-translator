@@ -64,4 +64,5 @@ There are two versions of this application:
 -   `.gitignore`: Specifies the files and directories that should be ignored by git.
 
 ## Generated Image Example
-<img width="1024" height="1024" alt="KakaoTalk_20251103_123119485" src="https://github.com/user-attachments/assets/ac3dc7fd-c8bf-4e3e-8ba8-29641d216c88" />
+<img width="400" height="400" alt="KakaoTalk_20251103_123119485" src="https://github.com/user-attachments/assets/ac3dc7fd-c8bf-4e3e-8ba8-29641d216c88" />
+
