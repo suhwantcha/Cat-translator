@@ -1,5 +1,15 @@
 # Cat Meow Translator & Meme Generator
 
+This application analyzes the audio of a cat's meow to understand its meaning and creates a humorous meme to match.
+
+## Overview
+
+Here's how it works:
+1.  **Audio Upload:** You start by uploading an audio file of a cat's meow (formats like WAV, MP3, etc., are supported).
+2.  **AI Translation:** The application sends the audio file to the Gemini API, which analyzes the meow's characteristics. Based on this analysis, it translates the meow into a short, funny, human-like phrase.
+3.  **Meme Generation:** The translated phrase is then used as a prompt for a separate AI model (Stable Diffusion via Hugging Face). This model generates a unique meme image that visually represents the translated text.
+4.  **Final Output:** The final result is a meme image with the translated cat "speech" as a caption.
+
 This project translates cat meows into human-readable text and generates a meme based on the translation.
 
 There are two versions of this application:
