@@ -40,3 +40,13 @@ There are two versions of this application:
     ```
     npm start
     ```
+
+## Project Structure
+
+-   `app.py`: The main file for the Streamlit application. It handles file uploads, API calls, and displays the results.
+-   `src/App.tsx`: The main component for the React application. It contains the UI and the logic for the simple meow translator.
+-   `public/`: Contains the static assets for the React application, such as `index.html` and images.
+-   `requirements.txt`: Lists the Python dependencies for the Streamlit application.
+-   `package.json`: Lists the Node.js dependencies for the React application.
+-   `.streamlit/secrets.toml`: A configuration file for storing API keys for the Streamlit application (this file is ignored by git).
+-   `.gitignore`: Specifies the files and directories that should be ignored by git.
