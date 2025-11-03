@@ -35,6 +35,8 @@ There are two versions of this application:
     GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
     HUGGING_FACE_API_KEY = "YOUR_HUGGING_FACE_API_KEY"
     ```
+    **Note:** You will need to obtain your own API keys from Google for the Gemini API and from Hugging Face for the Stable Diffusion model.
+
 3.  Run the Streamlit app:
     ```
     streamlit run app.py
