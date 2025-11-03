@@ -5,6 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 import json
 import io
 import requests
+import textwrap
 
 # --- Configuration ---
 # Using Streamlit secrets to manage API keys
@@ -36,14 +37,47 @@ def add_text_to_image(image: Image.Image, text: str) -> Image.Image:
     draw = ImageDraw.Draw(image)
     
     try:
-        font = ImageFont.truetype("arial.ttf", 40)
+        # Using a slightly smaller font to be safer with wrapping
+        font = ImageFont.truetype("arial.ttf", 35)
     except IOError:
         font = ImageFont.load_default()
-    
-    # Add text at the bottom
-    text_position = (10, image.height - 60)
-    draw.text(text_position, text, fill="white", font=font, stroke_width=2, stroke_fill="black")
-    
+
+    # --- Text Wrapping ---
+    # Wrap text to a certain number of characters per line (e.g., 40)
+    wrapped_text = textwrap.wrap(text, width=40)
+
+    # --- Calculate total text block size ---
+    total_text_height = 0
+    max_line_width = 0
+    line_spacing = 5  # Pixels between lines
+
+    # First pass to calculate the dimensions of the wrapped text block
+    line_heights = []
+    for line in wrapped_text:
+        bbox = draw.textbbox((0, 0), line, font=font)
+        line_width = bbox[2] - bbox[0]
+        line_height = bbox[3] - bbox[1]
+        if line_width > max_line_width:
+            max_line_width = line_width
+        total_text_height += line_height
+        line_heights.append(line_height)
+
+    total_text_height += line_spacing * (len(wrapped_text) - 1)
+
+    # --- Position and draw each line ---
+    # Start Y position for the entire text block
+    current_y = image.height - total_text_height - 20  # 20px margin from bottom
+
+    for i, line in enumerate(wrapped_text):
+        bbox = draw.textbbox((0, 0), line, font=font)
+        line_width = bbox[2] - bbox[0]
+        
+        # Center each line horizontally
+        line_x = (image.width - line_width) / 2
+        
+        draw.text((line_x, current_y), line, fill="white", font=font, stroke_width=2, stroke_fill="black")
+        current_y += line_heights[i] + line_spacing
+        
     return image
 
 # --- UI ---
